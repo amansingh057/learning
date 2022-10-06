@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    
+</body>
+<script type="text/babel">
+
+    //Java Script Method
+    // let root = document.getElementById('root')
+    // let ele = document.createElement('h1')
+    // ele.innerText = 'Hello'
+    // root.appendChild(ele)
+
+    // React Method
+    // let ele = React.createElement('h1',{
+    //     children : ['Hello ReactDOM Method']
+    // })
+    // ReactDOM.render(ele,root)
+
+    // JSX
+    function Element({name,age,marks}){ // First letter always capital
+        return(
+            <>
+            <h1>Hello in JSX {name}</h1>
+            <h2>{age}</h2>
+            <h2>{marks}</h2>
+            </>
+            
+        )
+    }
+    function Child({place}){
+        return(
+            <h1>Good Bye {place}</h1>
+        )
+    }
+    function Main(){
+        return(
+                <>
+
+                <Element name='Aman' age='21' marks='85'/>    
+                <Child place='Delhi'/>         
+                <Element age='45' marks='100'/>            
+                <Child place='up'/>          
+                </>
+            
+        )
+    }
+    ReactDOM.render(<Main/>,document.getElementById('root'))
+    
+</script>
+</html>
